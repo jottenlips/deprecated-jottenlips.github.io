@@ -1,18 +1,27 @@
+
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <LinkTree links={{ routes }}/>
+    <!-- <HelloWorld/> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LinkTree from './components/LinkTree.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    LinkTree
+  },
+  data: () => ({
+    routes: [{
+      url: 'www.kombucha.com',
+      title: 'kombucha'
+    }]
+  })
 }
 </script>
 
