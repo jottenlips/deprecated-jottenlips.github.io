@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="332px" height="186px" viewBox="0 0 332 186" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>trumpet</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="49.9379653" y="33" width="234.387097" height="67" rx="33.5"></rect>
+        <rect id="path-2" x="99.7344913" y="74" width="57.5235732" height="26" rx="13"></rect>
+        <rect id="path-3" x="179.580645" y="78" width="87.573201" height="19" rx="9.5"></rect>
+        <rect id="path-4" x="157.258065" y="69" width="10.3027295" height="26" rx="5.15136476"></rect>
+        <rect id="path-5" x="0.980148883" y="28" width="12.0198511" height="26" rx="6.00992556"></rect>
+        <path d="M150,7 C150,5.34314575 151.341623,4 152.997152,4 L159.002848,4 C160.658129,4 162,5.34651712 162,7 L162,7 C162,8.65685425 160.658377,10 159.002848,10 L152.997152,10 C151.341871,10 150,8.65348288 150,7 L150,7 Z" id="path-6"></path>
+        <path d="M178,7 C178,5.34314575 179.341623,4 180.997152,4 L187.002848,4 C188.658129,4 190,5.34651712 190,7 L190,7 C190,8.65685425 188.658377,10 187.002848,10 L180.997152,10 C179.341871,10 178,8.65348288 178,7 L178,7 Z" id="path-7"></path>
+        <path d="M164,7 C164,5.34314575 165.341623,4 166.997152,4 L173.002848,4 C174.658129,4 176,5.34651712 176,7 L176,7 C176,8.65685425 174.658377,10 173.002848,10 L166.997152,10 C165.341871,10 164,8.65348288 164,7 L164,7 Z" id="path-8"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M18.6004963,40.5 L324.248139,40.5" id="Line" stroke="#000000" stroke-width="9" stroke-linecap="square"></path>
+        <path d="M156,18 L156,106" id="Line" stroke="#000000" stroke-width="12" stroke-linecap="square"></path>
+        <path d="M184,18 L184,106" id="Line" stroke="#000000" stroke-width="12" stroke-linecap="square"></path>
+        <path d="M170,18 L170,106" id="Line" stroke="#000000" stroke-width="12" stroke-linecap="square"></path>
+        <g id="Rectangle">
+            <use fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <rect stroke="#000000" stroke-width="11" x="55.4379653" y="38.5" width="223.387097" height="56" rx="28"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-2"></use>
+            <rect stroke="#000000" stroke-width="8" x="103.734491" y="78" width="49.5235732" height="18" rx="9"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-3"></use>
+            <rect stroke="#000000" stroke-width="8" x="183.580645" y="82" width="79.573201" height="11" rx="5.5"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-4"></use>
+            <rect stroke="#000000" stroke-width="8" x="161.258065" y="73" width="2.30272953" height="18" rx="1.15136476"></rect>
+        </g>
+        <path d="M170.010306,36.5 C168.928256,30.0027196 253.3421,32.9037671 284.465212,26.7174763 C315.588324,20.5311855 328.573201,3 328.573201,3 L328.573201,70 C328.573201,70 305.693431,48.7384911 284.465212,45.2238414 C263.236993,41.7091917 171.591122,45.9921658 170.010306,36.5 Z" id="Path-2" stroke="#000000" fill="#000000"></path>
+        <polyline id="Triangle" stroke="#000000" fill="#000000" points="23.3027295 41 13 48 13 34"></polyline>
+        <text id="bopdev" font-family="Avenir-Book, Avenir" font-size="72" font-weight="normal" fill="#000000">
+            <tspan x="40" y="160">bopdev</tspan>
+        </text>
+        <g id="Rectangle">
+            <use fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-5"></use>
+            <rect stroke="#000000" stroke-width="8" x="4.98014888" y="32" width="4.01985112" height="18" rx="2.00992556"></rect>
+        </g>
+        <rect id="Rectangle" fill="#000000" x="325" y="0" width="6.86848635" height="74" rx="3.43424318"></rect>
+        <g id="Rectangle">
+            <use fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-6"></use>
+            <path stroke="#000000" stroke-width="3" d="M151.5,7 C151.5,6.17114926 152.170474,5.5 152.997152,5.5 L159.002848,5.5 C159.82796,5.5 160.5,6.17320095 160.5,7 C160.5,7.82885074 159.829526,8.5 159.002848,8.5 L152.997152,8.5 C152.17204,8.5 151.5,7.82679905 151.5,7 Z"></path>
+        </g>
+        <g id="Rectangle">
+            <use fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-7"></use>
+            <path stroke="#000000" stroke-width="3" d="M179.5,7 C179.5,6.17114926 180.170474,5.5 180.997152,5.5 L187.002848,5.5 C187.82796,5.5 188.5,6.17320095 188.5,7 C188.5,7.82885074 187.829526,8.5 187.002848,8.5 L180.997152,8.5 C180.17204,8.5 179.5,7.82679905 179.5,7 Z"></path>
+        </g>
+        <g id="Rectangle">
+            <use fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-8"></use>
+            <path stroke="#000000" stroke-width="3" d="M165.5,7 C165.5,6.17114926 166.170474,5.5 166.997152,5.5 L173.002848,5.5 C173.82796,5.5 174.5,6.17320095 174.5,7 C174.5,7.82885074 173.829526,8.5 173.002848,8.5 L166.997152,8.5 C166.17204,8.5 165.5,7.82679905 165.5,7 Z"></path>
+        </g>
+    </g>
+</svg>
