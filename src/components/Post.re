@@ -6,24 +6,25 @@ type state = {
   };
   
   /* Action declaration */
-  type action =
+type action =
     | Click
     | Toggle;
   
-
-  
-  [@react.component]
+[@react.component]
   let make = (~post: post) => {
-    let (_state, _dispatch) = React.useReducer((state, action) =>
+    let (state, dispatch) = React.useReducer((state, action) =>
     switch (action) {
     | Click => {...state, count: state.count + 1}
-    | Toggle => {...state, show: ! state.show}
-    }, {count: 0, show: true});
-
+    | Toggle => {...state, show: !state.show}
+    }, {count: 0, show: false});
     <div>
         {ReasonReact.string(post.title)}
-        {ReasonReact.string(post.content)}
+        <br/>
+        <button onClick={_event => dispatch(Toggle)}>
+          {ReasonReact.string("Read Article")}
+        </button>
+        <p>{state.show ? ReasonReact.string(post.content) : ReasonReact.null}</p>
 
     </div>;
-  };
+};
   
