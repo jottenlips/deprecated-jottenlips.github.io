@@ -2,7 +2,7 @@ open Routes
 
 [@react.component]
 let make = () => {
-  <div>
+  <div  style=(ReactDOMRe.Style.make(~padding="20px", ~flex="1", ()))  >
     {
       posts
       /* Convert to list to an array for ReasonReact's type bindings */

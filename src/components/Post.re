@@ -17,13 +17,20 @@ type action =
     | Click => {...state, count: state.count + 1}
     | Toggle => {...state, show: !state.show}
     }, {count: 0, show: false});
-    <div>
-        {ReasonReact.string(post.title)}
+    let height = state.show ? "100vw" : "100%";
+    <div style=ReactDOMRe.Style.make(~height=height,())>
+        <h2 style=(
+          ReactDOMRe.Style.make(~color="#000000", ~fontSize="24px", ())
+        )>{ReasonReact.string(post.title)}</h2>
         <br/>
         <button onClick={_event => dispatch(Toggle)}>
-          {ReasonReact.string("Read Article")}
+          <h3 style=(
+            ReactDOMRe.Style.make(~color="#000000", ~fontSize="18px", ())
+          )>{!state.show ? ReasonReact.string("Read Article >") : ReasonReact.string("Hide Article v")  }</h3>
         </button>
-        <p>{state.show ? ReasonReact.string(post.content) : ReasonReact.null}</p>
+        <p style=(
+          ReactDOMRe.Style.make(~color="#000000", ~fontSize="16px", ())
+        )>{state.show ? ReasonReact.string(post.content) : ReasonReact.null}</p>
 
     </div>;
 };
