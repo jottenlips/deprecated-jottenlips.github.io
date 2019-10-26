@@ -14,7 +14,7 @@ let make = (~id: string) => {
     |> List.filter((post) => post.id == id)
     |> Array.of_list
     /* Map each array item to a <Card /> component */
-    |> Array.map((post) => <Post key={post.title} post={post}/>)
+    |> Array.map((post) => <ArticleContent key={post.title} post={post}/>)
     /* Transform the array into a valid React node, similar to ReasonReact.string */
     |> ReasonReact.array
   }
