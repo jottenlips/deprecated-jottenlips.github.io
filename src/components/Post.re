@@ -24,6 +24,12 @@ type action =
           ReactDOMRe.Style.make(~color="#000000", ~fontSize="24px", ())
         )>{ReasonReact.string(post.title)}</h2>
         <br/>
+        // ReasonReactRouter.push("/books/10/edit#validated")
+        <button onClick={_event => ReasonReactRouter.push("/post/"++post.id)}>
+        <h3 style=(
+          ReactDOMRe.Style.make(~color="#000000", ~fontSize="18px", ())
+        )>{!state.show ? ReasonReact.string("Read Article >") : ReasonReact.string("Hide Article v")  }</h3>
+        </button>
         <button onClick={_event => dispatch(Toggle)}>
           <h3 style=(
             ReactDOMRe.Style.make(~color="#000000", ~fontSize="18px", ())
