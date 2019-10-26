@@ -2,4 +2,4 @@
 
 // ReactDOMRe.renderToElementWithId(<Component2 greeting="Hello!" />, "index2");
 // [%bs.raw {|require('./App.css')|}];
-ReactDOMRe.renderToElementWithId(<ArticleList/>, "index1");
+ReactDOMRe.renderToElementWithId(<Router/>, "index1");
