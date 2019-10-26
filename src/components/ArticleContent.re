@@ -8,7 +8,7 @@ let make = (~post: post) => {
     )>{ReasonReact.string(post.title)}</h2>
     <br/>    
     <p style=(
-      ReactDOMRe.Style.make(~color="#000000", ~fontSize="16px", ())
+      ReactDOMRe.Style.make(~color="#000000", ~fontSize="16px",  ~whiteSpace="pre-wrap", ())
     )>{ReasonReact.string(post.content)}</p>
     <div style=(ReactDOMRe.Style.make(~height="2px", ~width="100%", ~backgroundColor="#000000", ()))/>
 </div>;
