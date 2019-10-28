@@ -1,7 +1,7 @@
 const getFifth = (note) => {
     const lowerCaseNote = note.toLowerCase()
     const fifth = {
-        c: 'd',
+        c: 'g',
         g: 'd',
         d: 'a',
         a: 'e',
