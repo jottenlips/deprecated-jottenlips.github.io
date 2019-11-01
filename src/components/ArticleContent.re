@@ -14,7 +14,7 @@ let make = (~post: post) => {
         /* Convert to list to an array for ReasonReact's type bindings */
         |> Array.of_list
         /* Map each array item to a <Card /> component */
-        |> Array.map((content) => (<FullText content={content}/>))
+        |> Array.map((content) => (<TextWithFormat content={content}/>))
         /* Transform the array into a valid React node, similar to ReasonReact.string */
         |> ReasonReact.array
       }
