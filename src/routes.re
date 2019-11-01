@@ -34,26 +34,33 @@ let posts =  [{
     Let\'s write our first function.
     
     Functions can be as easy as add.
-    ```
+    <div style=\"background-color:#EEE\">
     const add = (x, y) =>  x + y
-    ```
+    </div>
+
+
     is short hand for
-    ```
+
+    <div style=\"background-color:#EEE\">
     const add = (x, y) => {
         return x + y
     }
-    ```
-    ```
+    </div>
+
+
+    <div style=\"background-color:#EEE\">
     const sum = add(1,2)
     console.log(sum) // 3
-    ```
+    </div>
+
     
     
     Think of a topic that interests you. I love music theory so I am going to write a simple function that tells me the fifth of any note.
     At this point you are thinking, show me the code!
     
     Or more involved like
-    ```
+
+    <div style=\"background-color:#EEE\">
     const getFifth = (note) => {
         const lowerCaseNote = note.toLowerCase()
         const fifth = {
@@ -78,8 +85,9 @@ let posts =  [{
     
     const fifthOfGb = getFifth('gb')
     console.log(`The fifth of Gb is ${fifthOfGb}`) // The fifth of Gb is Db
-    
-    ```
+    </div>
+
+
     First this function makes our input note lowercase so when we get the property (note) of our object (notes and their corresponding fifths) it will match one of the objects keys (left hand side of the object). 
     Then we get the property we passed in of the object. 
     Next we do some string manipulation to format our answer to how a user would expect the output.
@@ -87,9 +95,11 @@ let posts =  [{
     
     Write your own function in the file you created. 
     Run the program, in this case: 
-    ```
+
+    <div style=\"background-color:#EEE\">
     node mynewfile.js
-    ```
+    </div>
+    
     Congratulations! you have written your first function. 
     
     Tomorrow we will cover making your first Web App."
