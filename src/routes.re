@@ -28,6 +28,10 @@ let posts =  [{
         text: "
         brew install node # installs node and npm"
     },{
+        format: "p",
+        text: "
+        Install a text editor."
+    },{
         format: "code",
         text: "
         brew install node # installs node and npm
@@ -106,7 +110,8 @@ let posts =  [{
         Run the program, in this case: "
     }, {
         format: "code",
-        text: "node mynewfile.js"
+        text: "
+        node mynewfile.js"
     }, {
         format: "p",
         text: "
