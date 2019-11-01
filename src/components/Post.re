@@ -17,18 +17,18 @@ type action =
     | Click => {...state, count: state.count + 1}
     | Toggle => {...state, show: !state.show}
     }, {count: 0, show: false});
-    // let height = state.show ? "100vw" : "100%";
-    let length = String.length(post.content)
+    let content = List.hd(post.content)
+    let text = content.text;
+    let length = String.length(text)
     let overFifty = length > 50
     let cutoffLength = overFifty ? 50 : length
-    let cutoffPost = String.sub(post.content, 0, cutoffLength) ++"..."
+    let cutoffPost = String.sub(text, 0, cutoffLength) ++"..."
     let height = "30";
     <div style=ReactDOMRe.Style.make(~height=height,())>
         <h2 style=(
           ReactDOMRe.Style.make(~color="#000000", ~fontSize="24px", ())
         )>{ReasonReact.string(post.title)}</h2>
         <br/>
-        // ReasonReactRouter.push("/books/10/edit#validated")
         <button onClick={_event => ReasonReactRouter.push("/post/"++post.id)}>
         <h3 style=(
           ReactDOMRe.Style.make(~color="#000000", ~fontSize="18px", ())
