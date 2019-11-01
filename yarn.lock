@@ -533,13 +533,6 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-bs-director@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/bs-director/-/bs-director-0.0.6.tgz#b09f2243d1963242ee0a3ed7a5d8dd5886b37d6d"
-  integrity sha512-AHuD1aoipRoBi/gC8v7Xpq3odo+MUGy7eoWAOJoWvjWwERenIxkhMzgUxngcreo+pgXJiBEd4raZPpCRyN9uyw==
-  dependencies:
-    director "^1.2.8"
-
 bs-platform@^5.0.6:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-5.2.1.tgz#3f76f6d4f4c7255296375a8104c8be332770b691"
@@ -1095,11 +1088,6 @@ diffie-hellman@^5.0.0:
     bn.js "^4.1.0"
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
-
-director@^1.2.8:
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/director/-/director-1.2.8.tgz#c6d9b4dd890e9aff5365183fe9cc8e73994cf2d5"
-  integrity sha1-xtm03YkOmv9TZRg/6cyOc5lM8tU=
 
 dns-equal@^1.0.0:
   version "1.0.0"
