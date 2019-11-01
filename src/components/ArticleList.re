@@ -2,7 +2,9 @@ open Routes
 [@react.component]
 let make = () => {
   <div  style=(ReactDOMRe.Style.make(~padding="20px", ~flex="1", ()))  >
-  {ReasonReact.string("Hi! my name is John Ottenlips, I am a software developer that lives in Nashville. Welcome to my blog.")}
+  {ReasonReact.string("Hi! my name is John Ottenlips, 
+  I am a software developer, that lives in Nashville. 
+  Welcome to my blog.")}
     {
       posts
       /* Convert to list to an array for ReasonReact's type bindings */
@@ -14,4 +16,4 @@ let make = () => {
     }
   </div>;
 };
-  
+
