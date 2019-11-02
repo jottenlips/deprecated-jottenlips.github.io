@@ -135,6 +135,7 @@ let posts =  [{
     }, {
         format: "code",
         text: "
+        xcode-select --install # instal Git, it comes with xcode on macos
         npx create-react-app my-app # Creates an app named my-app
         cd my-app 
         npm start # runs your app"
@@ -158,18 +159,49 @@ let posts =  [{
         // These components can be functions as seen below
         // Entire apps can be composed of \"functional components\"
         const App = () => {
-        const [count, setCount] = useState(0)
-        return (
-            <div className=\"App\">
-                <p>{count}</p>
-                <button onClick={() => setCount(count + 1)}>
-                    increment count
-                </button> 
-            </div>
-        );
+            const [count, setCount] = useState(0)
+            return (
+                <div className=\"App\">
+                    <p>{count}</p>
+                    <button onClick={() => setCount(count + 1)}>
+                        increment count
+                    </button> 
+                </div>
+            );
         }
         export default App;
         "
-    }]
+    }, {
+        format: "p",
+        text: "
+        Try to make an app for making a list of groceries, chores, dreams, or something simple.
+        
+        *hint <input> can be used for text
+
+        Once you are happy with your app. Lets make sure your code is under version control
+        for future updates and collaboration with other developers using Git. 
+
+        First signup or login to Github, https://github.com/. Make a new repository for my-app. 
+        "
+    }, {
+        format: "code",
+        text: "
+        # cd to your project
+        git init # initialize a git repo in your project if you have not already
+        # add the remote to your local git repo
+        git remote add origin https://github.com/username/my-app 
+        # add your code to the staging area
+        git add --all
+        # commit your changes
+        git commit -m\"initial commit\"
+        # push your changes to git hub
+        git push origin master
+        "
+    },{
+        format: "p",
+        text: "
+        Congrats! You developed your first project and put it under source control!
+        "
+    },]
 }
 ]
