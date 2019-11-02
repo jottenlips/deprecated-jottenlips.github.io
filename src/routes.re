@@ -68,9 +68,7 @@ let posts =  [{
         format: "p",
         text: "
         Think of a topic that interests you. I love music theory so I am going to write a simple function that tells me the fifth of any note.
-        At this point you are thinking, show me the code!
-        
-        Or more involved like
+        Here is the code!        
         "
     }, {
         format: "code",
@@ -101,7 +99,9 @@ let posts =  [{
     }, {
         format: "p",
         text: "
-        First this function makes our input note lowercase so when we get the property (note) of our object (notes and their corresponding fifths) it will match one of the objects keys (left hand side of the object). 
+        First this function makes our input note lowercase so when we get the property (note) of 
+        our object (notes and their corresponding fifths) 
+        it will match one of the objects keys (left hand side of the object). 
         Then we get the property we passed in of the object. 
         Next we do some string manipulation to format our answer to how a user would expect the output.
         Finally, we return the result.
@@ -120,5 +120,56 @@ let posts =  [{
         Tomorrow we will cover making your first Web App."
     },
     ]
+}, {    
+    id: "1",
+    title: "Day 2: Your first Web App.",
+    content: [{
+        format: "p",
+        text: "
+        Lets start a real frontend web project.
+
+        Tools you will be adding to your repetoire: 
+        >- Git
+        >- React
+        "
+    }, {
+        format: "code",
+        text: "
+        npx create-react-app my-app # Creates an app named my-app
+        cd my-app 
+        npm start # runs your app"
+    }, {
+        format: "p",
+        text: "
+        Now that you have your first app running, lets make a simple app using react hooks.
+
+        Hooks are a way to manage a components state, in this case we can replace the
+        functional component create react app gives us with our own. Ours will have a a hook 
+        for count and a button to increment the count. 
+        "
+    }, {
+        format: "code",
+        text: "
+        import React from 'react';
+        import './App.css';
+        const { useState } = React
+        // We can use an arrow function here as well.
+        // In react you create apps from components.
+        // These components can be functions as seen below
+        // Entire apps can be composed of \"functional components\"
+        const App = () => {
+        const [count, setCount] = useState(0)
+        return (
+            <div className=\"App\">
+                <p>{count}</p>
+                <button onClick={() => setCount(count + 1)}>
+                    increment count
+                </button> 
+            </div>
+        );
+        }
+        export default App;
+        "
+    }]
 }
 ]
