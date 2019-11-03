@@ -185,9 +185,8 @@ let posts =  [{
         const [fifth, setFifth] = useState(0);
         return (
             <div className=\"App\">
-            <p>Fifth: {fifth}</p>
-            <input onChange={(e) => setFifth(getFifth(e.target.value))}>
-            </input>
+                <p>Fifth: {fifth}</p>
+                <input onChange={(e) => setFifth(getFifth(e.target.value))}/>
             </div>
         );
         }
@@ -228,8 +227,6 @@ let posts =  [{
         text: "
         Try to make an app for making a list of groceries, chores, mood-board, or something simple.
         
-        *hint <input> can be used for text
-
         Once you are happy with your app. Lets make sure your code is under version control
         for future updates and collaboration with other developers using Git. 
 
@@ -246,7 +243,7 @@ let posts =  [{
         git add --all
         # commit your changes
         git commit -m\"initial commit\"
-        # push your changes to git hub
+        # push your changes to Github
         git push origin master
         "
     }, {
