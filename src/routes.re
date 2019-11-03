@@ -11,11 +11,11 @@ type post = {
 
 let posts =  [{
     id: "0",
-    title: "Day 1: Lets write some JS.",
+    title: "Function Junction, Day 1: Lets write some JS.",
     content: [{
         format: "p",
         text: "
-        I get asked a lot from friends and family with some or no programming experience what it takes to becoming a developer. A lot of times they may have taken a programming class in college or done a handful of tutorials online but do not have a direction or plan after that.  This post is for everyone out there who wants to get into making software. Since I primarily do full-stack web development, and this is a very approachable point of entry into the software world, I will be focusing on that. These \"days\" can be done back to back or have a few days inbetween. I am grouping them into days for the sake of organization. It is best to do a small bit day by day than to do a large amount of work once a week. I will be using a Mac for this tutorial.
+        I get asked a lot from friends and family with some or no programming experience what it takes to becoming a developer. A lot of times they may have taken a programming class in college or done a handful of tutorials online but do not have a direction or plan after that.  This post is for everyone out there who wants to get into making software. Since I primarily do full-stack web development, and this is a very approachable point of entry into the software world, I will be focusing on that. These \"days\" can be done back to back or have a few days in-between. I am grouping them into days for the sake of organization. It is best to do a small bit day by day than to do a large amount of work once a week. I will be using a Mac for this tutorial.
 
         Here is a list of tools for getting started.
 
@@ -74,8 +74,10 @@ let posts =  [{
         format: "code",
         text: "
         const getFifth = (note) => {
+            // make our input lower case so we can use 
+            // it as a key for our circleOfFifths object
             const lowerCaseNote = note.toLowerCase()
-            const fifth = {
+            const circleOfFifths = {
                  c: 'd',
                  g: 'd',
                  d: 'a',
@@ -90,22 +92,18 @@ let posts =  [{
                  eb: 'bb',
                  bb:'f',
                  f: 'c'
-            }[lowerCaseNote]
+            }
+            // retrieve fifth of our input
+            const fifth = circleOfFifths[lowerCaseNote]
+            // format the output of the function to always begin with an upercase letter
             const formattedNote = `${fifth.charAt(0).toUpperCase()}${fifth.slice(1)}`
-            return formattedNote
+            return formattedNote;
         }
-        const fifthOfGb = getFifth('gb')
+        const fifthOfGb = getFifth('Gb')
         console.log(`The fifth of Gb is ${fifthOfGb}`) // The fifth of Gb is Db"
     }, {
         format: "p",
         text: "
-        First this function makes our input note lowercase so when we get the property (note) of 
-        our object (notes and their corresponding fifths) 
-        it will match one of the objects keys (left hand side of the object). 
-        Then we get the property we passed in of the object. 
-        Next we do some string manipulation to format our answer to how a user would expect the output.
-        Finally, we return the result.
-        
         Write your own function in the file you created. 
         Run the program, in this case: "
     }, {
@@ -122,7 +120,7 @@ let posts =  [{
     ]
 }, {    
     id: "1",
-    title: "Day 2: Your first Web App.",
+    title: "Function Junction, Day 2: Your first Web App.",
     content: [{
         format: "p",
         text: "
@@ -135,7 +133,7 @@ let posts =  [{
     }, {
         format: "code",
         text: "
-        xcode-select --install # instal Git, it comes with xcode on macos
+        xcode-select --install # install Git, it comes with xcode on macos
         npx create-react-app my-app # Creates an app named my-app
         cd my-app 
         npm start # runs your app"
@@ -144,9 +142,9 @@ let posts =  [{
         text: "
         Now that you have your first app running, lets make a simple app using react hooks.
 
-        Hooks are a way to manage a components state, in this case we can replace the
-        functional component create react app gives us with our own. Ours will have a a hook 
-        for count and a button to increment the count. 
+        Hooks are functions that let you \"hook into\" a components state or lifecycle,
+        in this case we can replace the functional component create react app gives us with our own. 
+        Ours will have a a hook for count and a button to increment the count. 
         "
     }, {
         format: "code",
@@ -174,10 +172,61 @@ let posts =  [{
     }, {
         format: "p",
         text: "
-        Try to make an app for making a list of groceries, chores, dreams, or something simple.
-        
-        *hint <input> can be used for text
+        Here is an example of a react app using hooks that tells you the fifth of any note."
+    }, {
+        format: "code",
+        text: "
+        // App.jsx
+        import React from 'react';
+        import './App.css';
+        import{ getFifth } from './getFifth';
+        const { useState } = React
+        const App = () => {
+        const [fifth, setFifth] = useState(0);
+        return (
+            <div className=\"App\">
+                <p>Fifth: {fifth}</p>
+                <input onChange={(e) => setFifth(getFifth(e.target.value))}/>
+            </div>
+        );
+        }
+        export default App;
 
+        // getFifth.js
+        export const getFifth = (note) => {
+            console.log(note)
+            if (!note) {
+                return '';
+            }
+            const lowerCaseNote = note.toLowerCase()
+            const fifth = {
+                c: 'g',
+                g: 'd',
+                d: 'a',
+                a: 'e',
+                e: 'b',
+                b: 'f#',
+                'f#': 'c#',
+                gb: 'db',
+                'c#': 'ab',
+                db: 'ab',
+                ab: 'eb',
+                eb: 'bb',
+                bb: 'f',
+                f: 'c'
+            }[lowerCaseNote]
+            if (!fifth) {
+                return '';
+            }
+            const formattedNote = `${fifth.charAt(0).toUpperCase()}${fifth.slice(1)}`
+            return formattedNote
+        }
+        "
+    }, {
+        format: "p",
+        text: "
+        Try to make an app for making a list of groceries, chores, mood-board, or something simple.
+        
         Once you are happy with your app. Lets make sure your code is under version control
         for future updates and collaboration with other developers using Git. 
 
@@ -194,14 +243,30 @@ let posts =  [{
         git add --all
         # commit your changes
         git commit -m\"initial commit\"
-        # push your changes to git hub
+        # push your changes to Github
         git push origin master
         "
-    },{
+    }, {
         format: "p",
         text: "
         Congrats! You developed your first project and put it under source control!
         "
     },]
-}
+}, 
+/* {
+    id: "2",
+    title: "Function Junction, Day 3: Your first API",
+    content: [{
+        format: "p",
+        text: "Web apps can only be so interesting without being connectd to a source of data or a place
+        to store a users data and interactions with your app. In order to do this we are going to need to 
+        create an endpoint where our user will pass data to or ask for data to display. In this post, I'll
+        show you two ways to spin up an API endpoint.
+        
+        Tools we will be adding to your repetoire: 
+        >- express (server framework)
+        >- serverless (what I use every day)
+        "
+    }]
+} */
 ]

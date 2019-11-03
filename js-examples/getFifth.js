@@ -13,7 +13,7 @@ const getFifth = (note) => {
         db: 'ab',
         ab: 'eb',
         eb: 'bb',
-        bb:'f',
+        bb: 'f',
         f: 'c'
     }[lowerCaseNote]
     const formattedNote = `${fifth.charAt(0).toUpperCase()}${fifth.slice(1)}`
