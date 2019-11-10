@@ -3,9 +3,9 @@ open Routes
 let make = () => {
   <div  style=(ReactDOMRe.Style.make(~padding="20px", ~flex="1", ()))  >
   <Emoji emoji={j|✨|j}/>
-  {ReasonReact.string("Hi! my name is John, 
-  I am a software developer, that lives in Nashville. 
-  My calling is to learn and spread knowledge about
+  {ReasonReact.string("Hi! My name is John, 
+  I'm a software developer, that lives in Nashville. 
+  I love to learn and spread knowledge about
   programming, cooking, and music, so I decided to start this blog.
   Welcome!")}
   <Emoji emoji={j|✨|j}/>
