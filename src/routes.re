@@ -235,10 +235,15 @@ let posts =  [{
     }, {
         format: "code",
         text: "
+        # run in your terminal
         # cd to your project
         git init # initialize a git repo in your project if you have not already
         # add the remote to your local git repo
         git remote add origin https://github.com/username/my-app 
+        # make a .gitignore
+        touch .gitignore
+        ignore your node_modules by adding node_modules to this file
+        echo node_modules >> .gitignore
         # add your code to the staging area
         git add --all
         # commit your changes
@@ -253,7 +258,7 @@ let posts =  [{
         "
     },]
 }, 
-/* {
+{
     id: "2",
     title: "Function Junction, Day 3: Your first API",
     content: [{
@@ -261,12 +266,131 @@ let posts =  [{
         text: "Web apps can only be so interesting without being connectd to a source of data or a place
         to store a users data and interactions with your app. In order to do this we are going to need to 
         create an endpoint where our user will pass data to or ask for data to display. In this post, I'll
-        show you two ways to spin up an API endpoint.
+        show you how to spin up an API endpoint locally.
         
         Tools we will be adding to your repetoire: 
-        >- express (server framework)
-        >- serverless (what I use every day)
+        >- serverless (what I use every day) 
+
+        Serverless is a framework for writing functions that are easy to develop and deploy.
+        This type or architecture is also easy to scale and you do not have to worry about 
+        managing servers. Also, when your software scales up you only pay for what is used. 
+        These functions are great for developing your backend infastructure since they are easy to maintain, 
+        test, and deploy. 
+
+        Here are some commands to get you started.
         "
-    }]
-} */
+    }, {
+        format: "code",
+        text: "
+        mkdir myapi # Make a new folder called myapi
+        cd myapi
+        npm init # initialize package.json 
+        git init # initialize git repository
+        touch serverless.yml # make the config file for serverless
+        mkdir src # make a folder for your source code
+        cd src # change directories to src
+        touch myfunction.js # make a file for your API function
+        "
+    }, {
+        format: "p",
+        text: "
+        Here is what your files should look like.
+        "
+    }, {
+        format: "code",
+        text: "
+        // serverless.yml
+        service: my-api
+
+        plugins:
+        - serverless-offline
+
+        provider:
+        name: aws
+        runtime: nodejs10.x
+        custom:
+        serverless-offline:
+            port: 3000
+
+        functions:
+        myfunction:
+            handler: src/myfunction.handler
+            events:
+            - http: 
+                method: get
+                path: /myfunction
+                cors: true
+
+        // myfunction.js
+        'use strict';
+
+        const handler = async(event) => {
+            return {
+                statusCode: 200,
+                body: JSON.stringify({
+                        message: 'Hello from the api!',
+                        input: event,
+                    },
+                    null,
+                    2
+                ),
+            };
+        };
+
+        module.exports.handler = handler;
+
+        // packge.json
+
+        {
+            \"name\": \"my-api\",
+            \"version\": \"1.0.0\",
+            \"description\": \"\",
+            \"main\": \"index.js\",
+            \"scripts\": {
+                \"test\": \"echo \"Error: no test specified\" && exit 1\"
+                \"start\": \"./node_modules/.bin/serverless offline start\"
+            },
+            \"dependencies\": {
+                \"serverless\": \"^1.57.0\",
+                \"serverless-offline\": \"^5.12.0\"
+            },
+            \"author\": \"\",
+            \"license\": \"ISC\"
+        }
+
+        // .gitignore
+        node_modules
+        "
+    }, {
+        format: "p",
+        text: "
+        When we get your backend code running we can request it to perform a function and return
+        a response. In our case we will perform a request via the terminal first.
+        "
+    }, 
+    {
+        format: "code",
+        text: "
+        # install our modules
+        cd myapi # if you are not there already
+        npm install
+        npm start
+        # Your API should now be running on localhost port 3000 which you can navigate to in your browser.
+        # open a new terminal window and run
+        curl localhost:3000/myfunction
+        # at the top of the output you should see 
+        # \"message\": \"Hello from the api!\" 
+        # in the response
+        "
+    }, {
+        format: "p",
+        text: "
+        Congrats! You have a backend for your application. Now you can go on to write
+        more GET and POST requests for your API. POSTs are typical for sending data to 
+        the backend and GET for retrieving a resource. Tomorrow we will set up a 
+        database for storing data our app will use. 
+        "
+    },
+    ]
+} 
 ]
