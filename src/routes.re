@@ -15,7 +15,13 @@ let posts =  [{
     content: [{
         format: "p",
         text: "
-        I get asked a lot from friends and family with some or no programming experience what it takes to becoming a developer. A lot of times they may have taken a programming class in college or done a handful of tutorials online but do not have a direction or plan after that.  This post is for everyone out there who wants to get into making software. Since I primarily do full-stack web development, and this is a very approachable point of entry into the software world, I will be focusing on that. These \"days\" can be done back to back or have a few days in-between. I am grouping them into days for the sake of organization. It is best to do a small bit day by day than to do a large amount of work once a week. I will be using a Mac for this tutorial.
+        I get asked a lot from friends and family with some or no programming experience what it takes to becoming a developer.
+        A lot of times they may have taken a programming class in college or done a handful of tutorials online
+        but do not have a direction or plan after that.  This post is for everyone out there who wants to get into making software. 
+        Since I primarily do full-stack web development, and this is a very approachable point of entry into the software world,
+        I will be focusing on that. These \"days\" can be done back to back or have a few days in-between. 
+        It is best to do a small bit day by day than to do a large amount of work once a week. 
+        I will be using a MacOS for these tutorials.
 
         Here is a list of tools for getting started.
 
