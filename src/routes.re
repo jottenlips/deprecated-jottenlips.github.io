@@ -263,7 +263,8 @@ let posts =  [{
     title: "Function Junction, Day 3: Your first API",
     content: [{
         format: "p",
-        text: "Web apps can only be so interesting without being connectd to a source of data or a place
+        text: "
+        Web apps can only be so interesting without being connectd to a source of data or a place
         to store a users data and interactions with your app. In order to do this we are going to need to 
         create an endpoint where our user will pass data to or ask for data to display. In this post, I'll
         show you how to spin up an API endpoint locally.
