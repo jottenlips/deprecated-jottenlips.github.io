@@ -248,7 +248,7 @@ let posts =  [{
         git remote add origin https://github.com/username/my-app 
         # make a .gitignore
         touch .gitignore
-        ignore your node_modules by adding node_modules to this file
+        # ignore your node_modules by adding node_modules to this file
         echo node_modules >> .gitignore
         # add your code to the staging area
         git add --all
