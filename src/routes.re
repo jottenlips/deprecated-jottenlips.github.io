@@ -1,3 +1,5 @@
+open Fetch
+
 type content = {
     format: string,
     text: string
@@ -9,7 +11,20 @@ type post = {
     content: list(content)
   };
 
-let posts =  [{
+let fetchPosts = () =>
+  Js.Promise.(
+    Fetch.fetch("https://s3.amazonaws.com/jottenlips.github/posts.json")
+    |> then_(Fetch.Response.json)
+    |> then_(json =>
+         json |> Decode.users |> (users => Some(users) |> resolve)
+       )
+    |> catch(_err => resolve(None))
+  );
+
+  /* https://s3.amazonaws.com/jottenlips.github/posts.json */
+  
+
+/* let posts =  [{
     id: "0",
     title: "Function Junction, Day 1: Lets write some JS.",
     content: [{
@@ -399,4 +414,4 @@ let posts =  [{
     },
     ]
 } 
-]
+] */
