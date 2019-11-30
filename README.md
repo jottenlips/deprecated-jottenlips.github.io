@@ -34,3 +34,14 @@ This will replace the development artifact `build/Index.js` for an optimized ver
 If you make use of routing (via `ReasonReact.Router` or similar logic) ensure that server-side routing handles your routes or that 404's are directed back to `index.html` (which is how the dev server is set up).
 
 **To enable dead code elimination**, change `bsconfig.json`'s `package-specs` `module` from `"commonjs"` to `"es6"`. Then re-run the above 2 commands. This will allow Webpack to remove unused code.
+
+
+
+     @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        button {
+            all: unset;
+        }

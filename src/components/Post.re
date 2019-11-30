@@ -23,25 +23,23 @@ type action =
     let overFifty = length > 50
     let cutoffLength = overFifty ? 50 : length
     let cutoffPost = String.sub(text, 0, cutoffLength) ++"..."
-    let height = "30";
-    <div style=ReactDOMRe.Style.make(~height=height,())>
+    let height = "50";
+    <div style=ReactDOMRe.Style.make(~height=height, ~padding="50", ())>
         <h2 style=(
-          ReactDOMRe.Style.make(~color="#000000", ~fontSize="24px", ())
+          ReactDOMRe.Style.make(~color="#000000", ())
         )>{ReasonReact.string(post.title)}</h2>
         <br/>
-        <button onClick={_event => ReasonReactRouter.push("/post/"++post.id)}>
-        <h3 style=(
-          ReactDOMRe.Style.make(~color="#000000", ~fontSize="18px", ())
-        )>{ReasonReact.string("Read Article >")}</h3>
+        <button style=ReactDOMRe.Style.make(~color="#000000", () ) 
+          onClick={_event => ReasonReactRouter.push("/post/"++post.id)}>
+          {ReasonReact.string("Read Article >")}
         </button>
         <br/>
-        <button onClick={_event => dispatch(Toggle)}>
-          <h3 style=(
-            ReactDOMRe.Style.make(~color="#000000", ~fontSize="18px", ())
-          )>{!state.show ? ReasonReact.string("Preview >") : ReasonReact.string("Preview v")  }</h3>
+        <button style=ReactDOMRe.Style.make(~color="#000000", () ) 
+          onClick={_event => dispatch(Toggle)}>
+          {!state.show ? ReasonReact.string("Preview >") : ReasonReact.string("Preview v")  }
         </button>
         <p style=(
-          ReactDOMRe.Style.make(~color="#000000", ~fontSize="16px", ())
+          ReactDOMRe.Style.make(~color="#000000", ~fontSize="16pt", ())
         )>{state.show ? ReasonReact.string(cutoffPost) : ReasonReact.null}</p>
         <div style=(ReactDOMRe.Style.make(~height="2px", ~width="100%", ~backgroundColor="#000000", ()))/>
     </div>;

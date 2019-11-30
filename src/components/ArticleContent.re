@@ -5,7 +5,7 @@ open Routes
 let make = (~post: post) => {
     <div style=ReactDOMRe.Style.make(~height="100%",())>
     <h2 style=(
-      ReactDOMRe.Style.make(~color="#000000", ~fontSize="24px", ())
+      ReactDOMRe.Style.make(~color="#000000", ~fontSize="20pt", ())
     )>{ReasonReact.string(post.title)}</h2>
     <br/>    
     

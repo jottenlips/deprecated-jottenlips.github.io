@@ -2,10 +2,10 @@ open Routes
 [@react.component]
 let make = (~id: string) => {
   <div  style=(ReactDOMRe.Style.make(~padding="20px", ~flex="1", ()))  >
-  <button onClick={_event => ReasonReactRouter.push("/")}>
-  <h3 style=(
-    ReactDOMRe.Style.make(~color="#000000", ~fontSize="18px", ())
-  )>{ReasonReact.string("< Back")}</h3>
+  <button onClick={_event => ReasonReactRouter.push("/")} style=(
+    ReactDOMRe.Style.make(~color="#000000", ())
+  )>
+  {ReasonReact.string("< Back")}
   <br/>
   </button>
   {
