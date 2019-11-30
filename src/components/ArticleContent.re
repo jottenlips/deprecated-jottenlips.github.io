@@ -19,7 +19,7 @@ let make = (~post: post) => {
         |> ReasonReact.array
       }
     
-    <div style=(ReactDOMRe.Style.make(~height="18pt", ~width="100%", ~backgroundColor="#000000", ()))/>
+    <div style=(ReactDOMRe.Style.make(~height="2px", ~width="100%", ~backgroundColor="#000000", ()))/>
 </div>;
 };
 // let markdown = (input: string): Js.Array => {
