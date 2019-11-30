@@ -1,4 +1,5 @@
 open Fetch
+open Json.Decode;
 
 type content = {
     format: string,
@@ -11,20 +12,39 @@ type post = {
     content: list(content)
   };
 
+let decodeContent = json =>
+  Json.Decode.{
+    format: json |> field("format", string),
+    text: json |> field("text", string)
+  };
+
+let decodePosts =
+    list(
+      optional(json =>
+        {
+          id: field("id", string, json),
+          title: field("title", string, json),
+          content: json |> field("content", list(decodeContent))
+        }
+      ),
+    );
+
 let fetchPosts = () =>
   Js.Promise.(
-    Fetch.fetch("https://s3.amazonaws.com/jottenlips.github/posts.json")
+    Fetch.fetchWithInit("https://s3.amazonaws.com/jottenlips.github/posts.json", 
+    Fetch.RequestInit.make(
+        ~method_=Get,
+        /* ~mode="no-cors", */
+        ()
+      )
+    )
     |> then_(Fetch.Response.json)
-    |> then_(json =>
-         json |> Decode.users |> (users => Some(users) |> resolve)
-       )
-    |> catch(_err => resolve(None))
+    |> then_(json => decodePosts(json) |> resolve)
   );
 
-  /* https://s3.amazonaws.com/jottenlips.github/posts.json */
-  
-
-/* let posts =  [{
+let posts = fetchPosts
+/* 
+let posts =  [{
     id: "0",
     title: "Function Junction, Day 1: Lets write some JS.",
     content: [{

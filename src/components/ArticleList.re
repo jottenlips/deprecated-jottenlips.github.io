@@ -11,7 +11,7 @@ let make = () => {
   <Emoji emoji={j|✨|j}/>
 
     {
-      posts
+      posts()
       /* Convert to list to an array for ReasonReact's type bindings */
       |> Array.of_list
       /* Map each array item to a <Card /> component */
