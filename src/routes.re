@@ -1,4 +1,4 @@
-open Fetch
+/* open Fetch
 open Json.Decode;
 
 type content = {
@@ -434,4 +434,4 @@ let posts =  [{
     },
     ]
 } 
-] */
+] */ */

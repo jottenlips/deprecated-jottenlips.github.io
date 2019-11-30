@@ -1,5 +1,5 @@
 
-open Routes
+open Api
 [@react.component]
 let make = (~content: content) => {
     let backgroundColor= content.format == "code" ? "#EEE" : "#FFF";

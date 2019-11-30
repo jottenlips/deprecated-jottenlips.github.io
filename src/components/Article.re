@@ -1,4 +1,4 @@
-open Routes
+open Api
 [@react.component]
 let make = (~id: string) => {
   <div  style=(ReactDOMRe.Style.make(~padding="20px", ~flex="1", ()))  >
@@ -8,8 +8,8 @@ let make = (~id: string) => {
   {ReasonReact.string("< Back")}
   <br/>
   </button>
-  {
-    posts
+  /* {
+    Api.fetchPosts()
     /* Convert to list to an array for ReasonReact's type bindings */
     |> List.filter((post) => post.id == id)
     |> Array.of_list
@@ -17,7 +17,7 @@ let make = (~id: string) => {
     |> Array.map((post) => <ArticleContent key={post.title} post={post}/>)
     /* Transform the array into a valid React node, similar to ReasonReact.string */
     |> ReasonReact.array
-  }
+  } */
 
   </div>;
 };
