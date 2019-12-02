@@ -22,12 +22,14 @@ let make = () => {
 
         React.useEffect1(
             () => {
-                let _posts = Api.fetchPosts
+                FetchApi.fetchPosts()
                     |> Js.Promise.then_(results => {
                     dispatch(UpdatePosts(results))
                     Js.Promise.resolve(results);
-                })  
+                })
+                None
             },
+
         );
       <div  style=(ReactDOMRe.Style.make(~padding="20px", ~flex="1", ()))  >
       <Emoji emoji={j|✨|j}/>
@@ -38,7 +40,7 @@ let make = () => {
       Welcome!")}
       <Emoji emoji={j|✨|j}/>
         {
-          posts
+          state.posts
           /* Convert to list to an array for ReasonReact's type bindings */
           |> Array.of_list
           /* Map each array item to a <Card /> component */
