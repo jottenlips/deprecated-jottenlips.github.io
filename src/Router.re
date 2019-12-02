@@ -1,9 +1,14 @@
+open ArticleList 
+
 [@react.component]
 let make = () => {
     let url = ReasonReactRouter.useUrl();
     switch (url.path) {
     | ["post", id] => (<Article id={id}/>)
-    | [] => (<ArticleList/>)
+    | [] => (
+        <ArticleList/>
+    )
     | _ => (<ArticleList/>)
     };
 }
+

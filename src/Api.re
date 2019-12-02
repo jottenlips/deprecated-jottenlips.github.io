@@ -1,5 +1,5 @@
-open Json.Decode;
 
+open Json.Decode;
 
 type content = {
     format: string,
@@ -11,8 +11,6 @@ type post = {
     title: string,
     content: list(content)
   };
-
-module Api = {
 
 let decodeContent = json =>
   Json.Decode.{
@@ -36,11 +34,9 @@ let fetchPosts =
     Fetch.fetchWithInit("https://s3.amazonaws.com/jottenlips.github/posts.json", 
     Fetch.RequestInit.make(
         ~method_=Get,
-        /* ~mode="no-cors", */
         ()
       )
     )
     |> then_(Fetch.Response.json)
     |> then_(json => decodePosts(json) |> resolve)
   );
-}

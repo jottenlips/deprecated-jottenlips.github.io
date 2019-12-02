@@ -7,24 +7,28 @@ type state = {
 type action =
   | UpdatePosts(list(post))
 
-let component = ReasonReact.reducerComponent("ArticleList");
+let defaultState = {posts: []};
 
-
-/* [@react.component] */
+[@react.component]
 let make = () => {
-    ...component,
-    initialState: () => {posts: []},
-    reducer: (action, _state) => switch (action) {
-      | UpdatePosts(posts) => ReasonReact.Update({posts: posts})
-      },
-    didMount: self => {
-      Api.fetchPosts
-        |> Js.Promise.then_(results => {
-        self.send(UpdatePosts(results));
-        Js.Promise.resolve(results);
-      })
-    },
-    render: self =>
+        let (state, dispatch) =
+        React.useReducer(
+          (_state, action) =>
+            switch (action) {
+            | UpdatePosts(posts) => { posts: posts }
+            },
+            defaultState,
+        );
+
+        React.useEffect1(
+            () => {
+                let _posts = Api.fetchPosts
+                    |> Js.Promise.then_(results => {
+                    dispatch(UpdatePosts(results))
+                    Js.Promise.resolve(results);
+                })  
+            },
+        );
       <div  style=(ReactDOMRe.Style.make(~padding="20px", ~flex="1", ()))  >
       <Emoji emoji={j|✨|j}/>
       {ReasonReact.string("Hi! My name is John, 
@@ -34,7 +38,7 @@ let make = () => {
       Welcome!")}
       <Emoji emoji={j|✨|j}/>
         {
-          self.state.posts
+          posts
           /* Convert to list to an array for ReasonReact's type bindings */
           |> Array.of_list
           /* Map each array item to a <Card /> component */
@@ -44,4 +48,3 @@ let make = () => {
         }
       </div>
 };
-
