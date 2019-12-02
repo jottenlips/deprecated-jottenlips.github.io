@@ -20,7 +20,7 @@ let make = () => {
             defaultState,
         );
 
-        React.useEffect1(
+        React.useEffect0(
             () => {
                 FetchApi.fetchPosts()
                     |> Js.Promise.then_(results => {
