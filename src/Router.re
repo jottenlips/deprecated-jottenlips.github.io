@@ -36,10 +36,8 @@ let make = () => {
 
     let filterPosts = (~id: string, ~posts: list(post)) => {
         posts
-        /* Convert to list to an array for ReasonReact's type bindings */
         |> List.filter((post) => post.id == id)
         |> Array.of_list
-        /* Map each array item to a <Card /> component */
     }
 
     let getPost = (~id: string, ~posts: list(post)) => {
