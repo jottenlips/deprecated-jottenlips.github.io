@@ -15,8 +15,8 @@ const uploadFile = () => {
     fs.readFile(`${folder}/${file}`, (err, data) => {
       if (err) throw err;
       const params = {
-        Bucket: `jottenlips.github`, // pass your bucket name
-        Key: `posts/${file}`, // file will be saved in <folderName> folder
+        Bucket: `jottenlips.github`,
+        Key: `posts/${file}`,
         Body: data
       };
       s3.upload(params, (error, data) => {
