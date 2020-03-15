@@ -29,18 +29,14 @@ let make = () => {
   });
   let url = ReasonReactRouter.useUrl();
 
-  let filterPosts = (~id: string, ~posts: list(post)) => {
-    posts |> List.filter(post => post.id == id) |> Array.of_list;
-  };
-
   let getPost = (~id: string, ~posts: list(post)) => {
-    let post = filterPosts(id, posts)[0];
-    post.file;
+    let post = posts |> List.filter(post => post.id == id);
+    List.nth(post, 0).file;
   };
 
-  switch (url.path) {
-  | ["post", id] => <Article file={getPost(id, state.posts)} />
-  | [] => <ArticleList posts={state.posts} />
+  switch (url.search) {
+  | "" => <ArticleList posts={state.posts} />
+  | search => <Article file={getPost(search, state.posts)} />
   | _ => <ArticleList posts={state.posts} />
   };
 };

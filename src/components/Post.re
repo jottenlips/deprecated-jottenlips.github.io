@@ -20,7 +20,7 @@ let make = (~post: post) => {
     <br />
     <button
       style={ReactDOMRe.Style.make(~color="#000000", ())}
-      onClick={_event => ReasonReactRouter.push("/post/" ++ post.id)}>
+      onClick={_event => ReasonReactRouter.push("?" ++ post.id)}>
       {ReasonReact.string("Read >")}
     </button>
     <br />

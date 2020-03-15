@@ -21,8 +21,7 @@ AWS_SECRET=
 ```
 
 ```
-mkdir posts
-touch posts.json
+cd posts
 touch Welcome.md
 ```
 
