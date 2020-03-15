@@ -8,3 +8,6 @@ npm-debug.log
 /node_modules/
 lib/
 *.bs.js
+.env
+!README.md
+*.md
