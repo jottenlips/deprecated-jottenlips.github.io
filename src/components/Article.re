@@ -25,5 +25,4 @@ let make = (~file: string) => {
     </button>
     <div dangerouslySetInnerHTML={"__html": article} />
   </div>;
-  // <ArticleContent key={post.title} post={post}/>
 };
