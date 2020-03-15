@@ -36,7 +36,6 @@ let make = () => {
 
   switch (url.path) {
   | ["post", id] => <Article file={getPost(id, state.posts)} />
-  | [] => <ArticleList posts={state.posts} />
   | _ => <ArticleList posts={state.posts} />
   };
 };
