@@ -34,8 +34,9 @@ let make = () => {
     List.nth(post, 0).file;
   };
 
-  switch (url.path) {
-  | ["post", id] => <Article file={getPost(id, state.posts)} />
+  switch (url.search) {
+  | "" => <ArticleList posts={state.posts} />
+  | search => <Article file={getPost(search, state.posts)} />
   | _ => <ArticleList posts={state.posts} />
   };
 };
