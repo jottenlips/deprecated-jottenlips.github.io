@@ -17,7 +17,8 @@ const uploadFile = () => {
       const params = {
         Bucket: `jottenlips.github`,
         Key: `posts/${file}`,
-        Body: data
+        Body: data,
+        ACL: "public-read"
       };
       s3.upload(params, (error, data) => {
         if (error) throw err;

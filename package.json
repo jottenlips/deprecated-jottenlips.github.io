@@ -9,7 +9,7 @@
     "webpack": "webpack -w",
     "webpack:production": "NODE_ENV=production webpack",
     "build:production": "npm run clean && npm run build && npm run webpack:production",
-    "publish": "npm run build:production && gaa && git commit -m\"publish\" && gp origin master",
+    "publish": "npm run build:production && gaa && git commit -m\"publish\" && gp origin master && node scripts/uploadPostsToS3.js",
     "server": "webpack-dev-server"
   },
   "keywords": [
