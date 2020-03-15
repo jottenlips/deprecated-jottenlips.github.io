@@ -10,6 +10,7 @@ let make = (~file: string) => {
          Js.log(results);
          let htmlStr = MarkyMarkdown.make(results);
          setArticle(_ => htmlStr);
+         Js.log(htmlStr);
          Js.Promise.resolve(results);
        });
     None;

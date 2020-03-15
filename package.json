@@ -9,7 +9,8 @@
     "webpack": "webpack -w",
     "webpack:production": "NODE_ENV=production webpack",
     "build:production": "npm run clean && npm run build && npm run webpack:production",
-    "publish": "npm run build:production && node scripts/uploadPostsToS3.js",
+    "add-posts": "node scripts/uploadPostsToS3.js",
+    "publish": "npm run build:production && npm run add-posts",
     "server": "webpack-dev-server"
   },
   "keywords": [
