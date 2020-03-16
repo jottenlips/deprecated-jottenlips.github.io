@@ -11,7 +11,6 @@ let make = (~posts: list(post)) => {
       programming, cooking, and music, so I decided to start this blog.
       Welcome!",
      )}
-    <Emoji emoji={j|✨|j} />
     {posts
      /* Convert to list to an array for ReasonReact's type bindings */
      |> Array.of_list

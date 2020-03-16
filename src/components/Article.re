@@ -2,11 +2,7 @@ open Api;
 
 [@react.component]
 let make =
-    (
-      ~id: string,
-      ~posts: list(post),
-      ~getFileName: (~id: string, ~posts: list(post)) => string,
-    ) => {
+    (~id: string, ~getFileName: (~id: string, ~posts: list(post)) => string) => {
   let (article, setArticle) = React.useState(() => "");
 
   React.useEffect0(() => {

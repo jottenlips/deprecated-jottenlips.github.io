@@ -42,6 +42,6 @@ let make = () => {
 
   switch (url.search) {
   | "" => <ArticleList posts={state.posts} />
-  | search => <Article id=search posts={state.posts} getFileName />
+  | search => <Article id=search getFileName />
   };
 };

@@ -37,7 +37,7 @@ posts.json looks like
 ]
 ```
 
-Welcome.md can be any read me.
+[Welcome.md can be any markdown.](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 to make your posts public run
 
