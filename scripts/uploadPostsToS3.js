@@ -15,7 +15,7 @@ const uploadFile = () => {
     fs.readFile(`${folder}/${file}`, (err, data) => {
       if (err) throw err;
       const params = {
-        Bucket: `jottenlips.github`,
+        Bucket: process.env.BUCKET_NAME,
         Key: `posts/${file}`,
         Body: data,
         ACL: "public-read"
