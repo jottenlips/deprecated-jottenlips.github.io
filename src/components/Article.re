@@ -15,7 +15,6 @@ let make =
          let file = getFileName(id, allPosts);
          FetchApi.fetchPost(file)
          |> Js.Promise.then_(results => {
-              Js.log(results);
               let htmlStr = MarkyMarkdown.make(results);
               setArticle(_ => htmlStr);
               Js.Promise.resolve(results);
