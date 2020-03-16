@@ -2,7 +2,7 @@
 
 When I began this project I wanted to start a programming blog, but found most of the
 frameworks to be overly complicated or have features I did not want or need. Maybe I just
-wanted an excude to learn ReasonML ✨.
+wanted an excuse to learn ReasonML ✨.
 
 ## Get started
 
