@@ -2,7 +2,13 @@ open Api;
 
 [@react.component]
 let make = (~posts: list(post)) => {
-  <div style={ReactDOMRe.Style.make(~padding="20px", ~flex="1", ())}>
+  <div
+    style={ReactDOMRe.Style.make(
+      ~padding="20px",
+      ~flex="1",
+      ~fontSize="18px",
+      (),
+    )}>
     <Emoji emoji={j|✨|j} />
     {ReasonReact.string(
        "Hi! My name is John,
