@@ -13,6 +13,7 @@ let make =
          |> Js.Promise.then_(results => {
               let htmlStr = MarkyMarkdown.make(results);
               setArticle(_ => htmlStr);
+              Js.log(htmlStr);
               Js.Promise.resolve(results);
             });
          Js.Promise.resolve(allPosts);
@@ -27,6 +28,17 @@ let make =
       {ReasonReact.string("< Back")}
       <br />
     </button>
-    <div dangerouslySetInnerHTML={"__html": article} />
+    <div
+      style={ReactDOMRe.Style.make(
+        ~alignItems="center",
+        ~justifyContent="center",
+        ~marginLeft="auto",
+        ~marginRight="auto",
+        ~width="50%",
+        ~minWidth="300px",
+        (),
+      )}>
+      <div dangerouslySetInnerHTML={"__html": article} />
+    </div>
   </div>;
 };
