@@ -30,8 +30,10 @@ let make = () => {
   let url = ReasonReactRouter.useUrl();
 
   let getPost = (~id: string, ~posts: list(post)) => {
-    let post = posts |> List.filter(post => post.id == id);
-    List.nth(post, 0).file;
+    switch (List.find(post => post.id == id, posts).file) {
+    | exception Not_found => "Welcome.md"
+    | post => post
+    };
   };
 
   switch (url.search) {
