@@ -19,26 +19,29 @@ let make = () => {
       defaultState,
     );
 
-  React.useEffect0(() => {
+  let setPosts = () =>
     FetchApi.fetchPosts()
     |> Js.Promise.then_(results => {
          dispatch(UpdatePosts(results));
          Js.Promise.resolve(results);
        });
+
+  React.useEffect0(() => {
+    setPosts();
     None;
   });
+
   let url = ReasonReactRouter.useUrl();
 
-  let getPost = (~id: string, ~posts: list(post)) => {
+  let getFileName = (~id: string, ~posts: list(post)) => {
     switch (List.find(post => post.id == id, posts).file) {
-    | exception Not_found => "Welcome.md"
+    | exception Not_found => "NotFound.md"
     | post => post
     };
   };
 
   switch (url.search) {
   | "" => <ArticleList posts={state.posts} />
-  | search => <Article file={getPost(search, state.posts)} />
-  | _ => <ArticleList posts={state.posts} />
+  | search => <Article id=search posts={state.posts} getFileName />
   };
 };

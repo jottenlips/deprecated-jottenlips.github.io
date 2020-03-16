@@ -1,17 +1,26 @@
 open Api;
 
 [@react.component]
-let make = (~file: string) => {
+let make =
+    (
+      ~id: string,
+      ~posts: list(post),
+      ~getFileName: (~id: string, ~posts: list(post)) => string,
+    ) => {
   let (article, setArticle) = React.useState(() => "");
 
   React.useEffect0(() => {
-    FetchApi.fetchPost(file)
-    |> Js.Promise.then_(results => {
-         Js.log(results);
-         let htmlStr = MarkyMarkdown.make(results);
-         setArticle(_ => htmlStr);
-
-         Js.Promise.resolve(results);
+    FetchApi.fetchPosts()
+    |> Js.Promise.then_(allPosts => {
+         let file = getFileName(id, allPosts);
+         FetchApi.fetchPost(file)
+         |> Js.Promise.then_(results => {
+              Js.log(results);
+              let htmlStr = MarkyMarkdown.make(results);
+              setArticle(_ => htmlStr);
+              Js.Promise.resolve(results);
+            });
+         Js.Promise.resolve(allPosts);
        });
     None;
   });
