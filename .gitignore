@@ -11,3 +11,4 @@ lib/
 .env
 !README.md
 *.md
+/posts/posts.json
