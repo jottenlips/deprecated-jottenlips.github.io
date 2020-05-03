@@ -10,6 +10,11 @@
     "title": "How to use this blog engine as your own"
   },
   {
+    "id": "6",
+    "file": "Reasons_JS_Is_Good.md",
+    "title": "Reasons JS is good"
+  },
+  {
     "id": "3",
     "file": "Day_1_Functions.md",
     "title": "Day 1: Let's write some JS functions"

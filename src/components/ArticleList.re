@@ -15,7 +15,7 @@ let make = (~posts: list(post)) => {
       I'm a software developer, that lives in Nashville.
       I love to learn and spread knowledge about
       programming, cooking, and music, so I decided to start this blog.
-      Welcome!",
+      Welcome! All opinions are my own and possibly misguided.",
      )}
     {posts
      /* Convert to list to an array for ReasonReact's type bindings */
