@@ -18,5 +18,10 @@
     "id": "4",
     "file": "4_2_2020_First_web_app.md",
     "title": "Day 2: Let's start a web app"
+  },
+  {
+    "id": "5",
+    "file": "5_3_2020_First_API.md",
+    "title": "Day 3: Writing back-end code, Your first API"
   }
 ]
