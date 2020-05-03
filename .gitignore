@@ -12,3 +12,5 @@ lib/
 !README.md
 *.md
 /posts/posts.json
+posts.json
+/posts
