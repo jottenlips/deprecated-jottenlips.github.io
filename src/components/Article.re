@@ -22,9 +22,7 @@ let make =
   });
 
   <div style={ReactDOMRe.Style.make(~padding="20px", ~flex="1", ())}>
-    <button
-      onClick={_event => ReasonReactRouter.push("/")}
-      style={ReactDOMRe.Style.make(~color="#000000", ())}>
+    <button onClick={_event => ReasonReactRouter.push("/")}>
       {ReasonReact.string("< Back")}
       <br />
     </button>

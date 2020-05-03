@@ -18,9 +18,8 @@ let make = (~post: post) => {
       {ReasonReact.string(post.title)}
     </h2>
     <br />
-    <button
-      style={ReactDOMRe.Style.make(~color="#000000", ())}
-      onClick={_event => ReasonReactRouter.push("?" ++ post.id)}>
+    <button onClick={_event => ReasonReactRouter.push("?" ++ post.id)}>
+      <Emoji emoji={j|📖|j} />
       {ReasonReact.string("Read >")}
     </button>
     <br />
