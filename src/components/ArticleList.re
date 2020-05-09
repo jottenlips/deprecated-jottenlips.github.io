@@ -11,11 +11,8 @@ let make = (~posts: list(post)) => {
     )}>
     <Emoji emoji={j|✨|j} />
     {ReasonReact.string(
-       "Hi! My name is John,
-      I'm a software developer, that lives in Nashville.
-      I love to learn and spread knowledge about
-      programming, cooking, and music, so I decided to start this blog.
-      Welcome! All opinions are my own and possibly misguided.",
+       "Hi! My name is John,\n
+      Welcome to my blog, I am a musiciand and software developer living in Nashville. For more info check out my first post.",
      )}
     {posts
      /* Convert to list to an array for ReasonReact's type bindings */
