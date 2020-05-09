@@ -10,7 +10,7 @@ let make = (~posts: list(post)) => {
       (),
     )}>
     <Emoji emoji={j|✨|j} />
-    {ReasonReact.string("Hi! My name is John,")}
+    {ReasonReact.string("Hi! My name is John. ")}
     <br />
     <br />
     {ReasonReact.string(
