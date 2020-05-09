@@ -11,6 +11,7 @@
     "build:production": "npm run clean && npm run build && npm run webpack:production",
     "add-posts": "node scripts/uploadPostsToS3.js",
     "publish": "npm run build:production && npm run add-posts",
+    "deploy": "yarn run publish && git add --all && git commit -m\"publish\" && git push",
     "server": "webpack-dev-server"
   },
   "keywords": [
