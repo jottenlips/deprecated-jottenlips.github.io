@@ -1,5 +1,11 @@
 open Api;
 
+module StringCmp =
+  Belt.Id.MakeComparable({
+    type t = string;
+    let cmp = Pervasives.compare;
+  });
+
 [@react.component]
 let make = (~posts: list(post)) => {
   let (value, onChange) = React.useState(() => "");
@@ -34,11 +40,37 @@ let make = (~posts: list(post)) => {
       )}
       onChange={event => {
         let value = ReactEvent.Form.target(event)##value;
-        Js.log(posts);
         onChange(value);
       }}
       value
     />
+    <br />
+    <button onClick={_event => onChange(_ => "")}>
+      {ReasonReact.string("clear")}
+    </button>
+    <br />
+    {posts
+     /* Convert to list to an array for ReasonReact's type bindings */
+     |> Array.of_list
+     /* Map each array item to a <Card /> component */
+     |> Array.map(post
+          // let setOfTags =
+          //   Belt.Set.fromArray(post.tags, ~id=(module StringCmp));
+          // Js.log(setOfTags);
+          // setOfTags
+          // |> Belt.Set.toArray
+          =>
+            post.tags
+            |> Array.map(tag =>
+                 <button onClick={_event => onChange(_ => tag)}>
+                   {ReasonReact.string("#" ++ tag)}
+                 </button>
+               )
+            //  onclick={() => onChange(tag)}
+            |> ReasonReact.array
+          )
+     |> ReasonReact.array}
+    /* Transform the array into a valid React node, similar to ReasonReact.string */
     {posts
      |> List.filter(post =>
           Js.String.includes(
