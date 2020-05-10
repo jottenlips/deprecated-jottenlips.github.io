@@ -30,7 +30,7 @@ let make = (~posts: list(post)) => {
     />
     {posts
      |> List.filter(post =>
-          Js.String.startsWith(
+          Js.String.includes(
             String.lowercase(value),
             String.lowercase(post.title),
           )
