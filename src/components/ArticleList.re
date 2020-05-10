@@ -50,20 +50,17 @@ let make = (~posts: list(post)) => {
     </button>
     <br />
     {posts
-     /* Convert to list to an array for ReasonReact's type bindings */
      |> List.map(post => post.tags |> Array.to_list)
      |> List.flatten
      |> Array.of_list
      |> Belt.Set.fromArray(~id=(module StringCmp))
      |> Belt.Set.toArray
-     /* Map each array item to a <Card /> component */
      |> Array.map(tag =>
           <button onClick={_event => onChange(_ => tag)}>
             {ReasonReact.string("#" ++ tag)}
           </button>
         )
-     //  onclick={() => onChange(tag)}
-     |> ReasonReact.array} /* Transform the array into a valid React node, similar to ReasonReact.string */
+     |> ReasonReact.array}
     {posts
      |> List.filter(post =>
           Js.String.includes(
@@ -72,11 +69,8 @@ let make = (~posts: list(post)) => {
           )
           || Js.Array.(post.tags |> includes(String.lowercase(value)))
         )
-     /* Convert to list to an array for ReasonReact's type bindings */
      |> Array.of_list
-     /* Map each array item to a <Card /> component */
      |> Array.map(post => <Post key={post.file} post />)
-     /* Transform the array into a valid React node, similar to ReasonReact.string */
      |> ReasonReact.array}
   </div>;
 };

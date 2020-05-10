@@ -19,7 +19,6 @@ let make = (~post: post) => {
     </h2>
     <br />
     {post.tags
-     /* Map each array item to a <Card /> component */
      |> Array.map(tag => ReasonReact.string({"#" ++ tag ++ " "}))
      |> ReasonReact.array}
     <br />
