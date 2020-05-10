@@ -21,18 +21,18 @@
     "id": "3",
     "file": "Day_1_Functions.md",
     "title": "Day 1: Let's write some JS functions",
-    "tags": ["beginner", "javascript"]
+    "tags": ["beginner"]
   },
   {
     "id": "4",
     "file": "4_2_2020_First_web_app.md",
     "title": "Day 2: Let's start a web app",
-    "tags": ["beginner", "javascript"]
+    "tags": ["beginner"]
   },
   {
     "id": "5",
     "file": "5_3_2020_First_API.md",
     "title": "Day 3: Writing back-end code, your first API",
-    "tags": ["beginner", "javascript"]
+    "tags": ["beginner"]
   }
 ]
