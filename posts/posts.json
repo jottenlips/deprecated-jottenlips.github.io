@@ -2,31 +2,37 @@
   {
     "id": "1",
     "file": "Welcome.md",
-    "title": "Welcome / About"
+    "title": "Welcome / About",
+    "tags": []
   },
   {
     "id": "2",
     "file": "3_15_2020_How_to_use.md",
-    "title": "How to use this blog engine as your own"
+    "title": "How to use this blog engine as your own",
+    "tags": ["reasonml", "tutorial", "blog"]
   },
   {
     "id": "6",
     "file": "Reasons_JS_Is_Good.md",
-    "title": "Reasons JS is good"
+    "title": "Reasons JS is good",
+    "tags": ["opinion", "javascript"]
   },
   {
     "id": "3",
     "file": "Day_1_Functions.md",
-    "title": "Day 1: Let's write some JS functions"
+    "title": "Day 1: Let's write some JS functions",
+    "tags": ["beginner", "javascript"]
   },
   {
     "id": "4",
     "file": "4_2_2020_First_web_app.md",
-    "title": "Day 2: Let's start a web app"
+    "title": "Day 2: Let's start a web app",
+    "tags": ["beginner", "javascript"]
   },
   {
     "id": "5",
     "file": "5_3_2020_First_API.md",
-    "title": "Day 3: Writing back-end code, your first API"
+    "title": "Day 3: Writing back-end code, your first API",
+    "tags": ["beginner", "javascript"]
   }
 ]
