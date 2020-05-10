@@ -18,6 +18,12 @@ let make = (~post: post) => {
       {ReasonReact.string(post.title)}
     </h2>
     <br />
+    {post.tags
+     /* Map each array item to a <Card /> component */
+     |> Array.map(tag => ReasonReact.string({"#" ++ tag ++ " "}))
+     |> ReasonReact.array}
+    <br />
+    <br />
     <button onClick={_event => ReasonReactRouter.push("?" ++ post.id)}>
       <Emoji emoji={j|📖|j} />
       {ReasonReact.string("Read >")}

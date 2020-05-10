@@ -4,6 +4,7 @@ type post = {
   id: string,
   file: string,
   title: string,
+  tags: array(string),
 };
 
 module FetchApi = {
@@ -13,6 +14,7 @@ module FetchApi = {
         id: field("id", string, json),
         file: field("file", string, json),
         title: field("title", string, json),
+        tags: field("tags", array(string), json),
       }
     );
 
