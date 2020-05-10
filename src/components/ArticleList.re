@@ -44,23 +44,32 @@ let make = (~posts: list(post)) => {
       }}
       value
     />
-    <br />
-    <button onClick={_event => onChange(_ => "")}>
+    <button
+      style={ReactDOMRe.Style.make(~margin="10px", ())}
+      onClick={_event => onChange(_ => "")}>
       {ReasonReact.string("clear")}
     </button>
     <br />
-    {posts
-     |> List.map(post => post.tags |> Array.to_list)
-     |> List.flatten
-     |> Array.of_list
-     |> Belt.Set.fromArray(~id=(module StringCmp))
-     |> Belt.Set.toArray
-     |> Array.map(tag =>
-          <button onClick={_event => onChange(_ => tag)}>
-            {ReasonReact.string("#" ++ tag)}
-          </button>
-        )
-     |> ReasonReact.array}
+    <div style={ReactDOMRe.Style.make(~maxWidth="325px", ())}>
+      {posts
+       |> List.map(post => post.tags |> Array.to_list)
+       |> List.flatten
+       |> Array.of_list
+       |> Belt.Set.fromArray(~id=(module StringCmp))
+       |> Belt.Set.toArray
+       |> Array.map(tag =>
+            <button
+              onClick={_event => onChange(_ => tag)}
+              style={ReactDOMRe.Style.make(
+                ~margin="3px",
+                ~marginTop="12px",
+                (),
+              )}>
+              {ReasonReact.string("#" ++ tag)}
+            </button>
+          )
+       |> ReasonReact.array}
+    </div>
     {posts
      |> List.filter(post =>
           Js.String.includes(
