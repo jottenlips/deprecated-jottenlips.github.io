@@ -24,6 +24,7 @@ let make = (~posts: list(post)) => {
          "Welcome to my blog. I am a musician and software developer living in Nashville TN. For more info check out my first post.",
        )}
     </h3>
+    <AnimatedText />
     <br />
     <input
       placeholder="Search"

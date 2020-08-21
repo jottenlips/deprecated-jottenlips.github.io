@@ -19,7 +19,8 @@
     "reason-react",
     "@glennsl/bs-json",
     "bs-fetch",
-    "bs-marky-markdown"
+    "bs-marky-markdown",
+    "bs-react-spring"
   ],
   "refmt": 3
 }
